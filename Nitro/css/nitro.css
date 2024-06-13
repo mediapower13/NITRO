@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+         rgba(144, 144, 53, 0.802), rgba(110, 56, 56, 0.802)),
+          url(../img/mediapowers.jpg);
+    background-size: contain, ;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.logo:hover {
+    animation: moveInRight 1s ease-out;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden; 
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    animation: moveInLeft;
+    animation-duration: 3s;
+    /* animation-delay: 3s; */
+}
+
+.heading-primary-sub { 
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 17.4px;
+
+
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+           opacity: 0;
+           transform: translateX(-100);
+    }
+
+    80% {
+            transform: translateX(20px);
+    }
+
+    100% {
+          opacity: 1;
+          transform: translate(0);
+    }
+        /* from {background-color: rgb(170, 100, 100);} */
+        /* to {background-color: rgb(197, 89, 111);} */
+}
+
+
+@keyframes moveInRight {
+    0% {
+           opacity: 1;
+           transform: translateY(-100);
+    }
+
+    80% {
+            transform: translateY(20px);
+    }
+
+    100% {
+          opacity: 0;
+          transform: translate(0);
+    }
+}
+@keyframes moveInBotton {
+    0% {
+           opacity: 1;
+           transform: translateY(30px);
+    }
+
+    100% {
+          opacity: 0;
+          transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn:visited  {
+           text-transform: uppercase;
+           text-decoration: none;
+           padding: 15px 40px;
+           display: inline-block;
+           border-radius: 100px;
+           transition: all, .2s,;
+           position: relative;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.btn-white {
+    background-color: #fff;
+    color: #777;  
+
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #725353;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.2) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBotton .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
